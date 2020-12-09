@@ -1,0 +1,37 @@
+<h1 class="text-blue-900 text-center my-2">Pagina dell'artista</h1>
+<div class="flex flex-col w-full h-full my-3 items-center"
+     [formGroup]="artistFg">
+    <div class="flex flex-row">
+        <div class="flex flex-row">
+            <label class="text-blue-900 m-2">Nome: </label>
+            <input class="mx-2"
+                   type="text"
+                   readonly
+                   [formControl]="name">
+        </div>
+        <div class="flex flex-row">
+            <label class="text-blue-900 m-2">Cognome: </label>
+            <input class="mx-2"
+                   type="text"
+                   readonly
+                   [formControl]="surname">
+        </div>
+
+    </div>
+    <div class="flex flex-row">
+        <div class="flex flex-row">
+            <label class="text-blue-900 m-2">Anni: </label>
+            <input class="mx-2"
+                   type="text"
+                   readonly
+                   [formControl]="age">
+        </div>
+        <div class="flex flex-row">
+            <label class="text-blue-900 m-2">Descrizione: </label>
+            <input class="mx-2"
+                   type="text"
+                   readonly
+                   [formControl]="description">
+        </div>
+    </div>
+</div>
