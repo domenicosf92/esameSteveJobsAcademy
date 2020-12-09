@@ -1,11 +1,24 @@
-<div *ngFor="let item of recent"
-     class="flex flex-col m-2 items-center justify-center">
-    <div class="flex flex-row">
-        <img src="">
-        <div class="flex flex-col justify-center items-center">
-            <div class="flex text-blue-900 text-center">Autore: {{item.author.name}} {{item.author.surname}}</div>
-            <div class="flex text-blue-900 text-center">Traccia: {{ item.title }}</div>
+<div class="flex-col">
+    <div *ngFor="let track of recent"
+         (click)="onTrackClick(track)"
+         class="flex flex-col justify-center items-center m-2 cursor-pointer">
+        <div class="flex flex-row">
+            <img class="w-4 h-4"
+                 src="../../../assets/images/nota.png"
+                 alt="nota">
+            <p>{{track.title}}</p>
         </div>
+        <p class="px-4 hover:text-blue-800 focus:outline-none"
+           [routerLink]="['/artist']"
+           [queryParams]="{id: track.author.id}"
+           routerLinkActive="router-link-active">by {{track.author.name}} {{track.author.surname}}</p>
+        <hr class="block w-60 border border-solid">
     </div>
-    <div class="flex"></div>
+    <div class="flex flex-col justify-center">
+        <img class="mx-4"
+             src="../../../assets/images/musicplayer.png"
+             alt="player">
+        <p class="text-center m-2"
+           *ngIf="track">Stai ascoltando {{ track.title }}</p>
+    </div>
 </div>
