@@ -8,6 +8,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 export class StartComponent implements OnInit, AfterViewInit {
   @ViewChild('dropdown')
   dropdown!: ElementRef<HTMLElement>;
+  @ViewChild('dropdown2')
+  dropdown2!: ElementRef<HTMLElement>;
 
   constructor() { }
 
@@ -21,5 +23,11 @@ export class StartComponent implements OnInit, AfterViewInit {
   openPanel() {
     this.dropdown.nativeElement.classList.toggle('hidden');
   }
+
+  openNavigationPanel() {
+    this.dropdown2.nativeElement.classList.toggle('hidden');
+  }
+
+
 
 }
